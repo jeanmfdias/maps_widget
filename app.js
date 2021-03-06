@@ -1,13 +1,18 @@
-const myLatLng = { lat: -25.363, lng: 131.044 };
+const manyLatLong = [
+  { lat: -20.545476818846954, lng: -47.40601247311941 },
+  { lat: -20.529843158099354, lng: -47.40644114428367 }
+];
 
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: myLatLng,
-    });
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: manyLatLong[0],
+  });
+  for (let i in manyLatLong) {
     new google.maps.Marker({
-      position: myLatLng,
+      position: manyLatLong[i],
       map,
-      title: "Hello World!",
+      title: "Maps Widget!",
     });
+  }
 }
